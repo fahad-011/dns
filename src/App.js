@@ -1,4 +1,7 @@
-import React from "react";
+import SettingsIco from "./assets/settings.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
 
 const App = () => {
   return (
@@ -94,7 +97,60 @@ const App = () => {
 
       {/* Products */}
       <div className="col-span-1 sm:col-span-5 bg-gray-50 p-4 sm:p-6 ml-4 sm:ml-4 rounded-lg shadow-lg">
-        <h1 className="text-xl sm:text-2xl font-bold">Products</h1>
+        <div className="flex flex-col sm:flex-row items-center justify-between">
+          <h1 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-0">
+            Products
+          </h1>
+          <div className="flex items-center">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Search for..."
+                className="pl-10 pr-4 py-2 rounded-md border-gray-300 focus:outline-none focus:border-indigo-500 text-sm sm:text-base"
+              />
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <FontAwesomeIcon icon={faSearch} className="text-gray-400" />
+              </div>
+            </div>
+
+            <FontAwesomeIcon
+              icon={faCopy}
+              className="h-8 w-8 sm:mr-4 sm:ml-4 mr-2 ml-2"
+            />
+
+            <img src={SettingsIco} className="h-8 w-8" alt="Settings Icon" />
+          </div>
+        </div>
+
+        <hr className="mt-4" />
+
+        <div className="flex flex-col sm:flex-row items-center justify-between mt-4">
+          <div className="text-custom-xl mb-4 sm:mb-0 flex flex-wrap sm:flex-nowrap">
+            <h2 className="mr-4 mb-2 sm:mb-0 border px-3 py-2 rounded-md hover:bg-gray-100">
+              All brands
+            </h2>
+            <h2 className="mr-4 mb-2 sm:mb-0 border px-3 py-2 rounded-md hover:bg-gray-100">
+              Desk
+            </h2>
+            <h2 className="mr-4 mb-2 sm:mb-0 border px-3 py-2 rounded-md hover:bg-gray-100">
+              Tags
+            </h2>
+            <h2 className="mr-4 mb-2 sm:mb-0 border px-3 py-2 rounded-md hover:bg-gray-100">
+              Sort
+            </h2>
+            <h2 className="mr-4 mb-2 sm:mb-0 border px-3 py-2 rounded-md hover:bg-gray-100">
+              Filter
+            </h2>
+          </div>
+          <div className="hidden sm:flex items-end">
+            <h2 className="mr-4 border px-3 py-2 rounded-md hover:bg-gray-100">
+              Meeting
+            </h2>
+            <h2 className="border px-3 py-2 rounded-md hover:bg-gray-100">
+              Import/export
+            </h2>
+          </div>
+        </div>
       </div>
     </div>
   );
